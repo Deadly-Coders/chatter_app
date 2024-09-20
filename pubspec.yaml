@@ -1,0 +1,36 @@
+name: chatter_app
+description: A new Flutter project.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <4.0.0"  # Ensure null safety support
+
+dependencies:
+  flutter:
+    sdk: flutter
+  animated_text_kit: ^4.2.2  # Upgraded version
+  firebase_core: ^1.24.0
+  firebase_auth: ^3.3.19
+  cloud_firestore: ^3.1.0
+  fluttertoast: ^8.0.9
+  modal_progress_hud_nsn: ^0.2.0
+  cupertino_icons: ^1.0.2
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Italic.ttf
+          style: italic
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 700

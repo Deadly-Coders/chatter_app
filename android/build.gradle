@@ -1,0 +1,43 @@
+buildscript {
+    ext.kotlin_version = '1.5.31' // or latest
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.0.2' // or latest
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+rootProject.buildDir = '../build'
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(':app')
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+android {
+    compileSdkVersion 31 // or latest
+    defaultConfig {
+        applicationId "your.package.name"
+        minSdkVersion 21 // or as needed
+        targetSdkVersion 31 // or latest
+        versionCode 1
+        versionName "1.0"
+    }
+}
+
